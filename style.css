@@ -1,0 +1,356 @@
+/*
+Theme Name:   version_class_outline
+Theme URI:    https://knighthawk0811.github.io/class-outline/
+Description:  version_class_outline is a custom theme for my 2020 class-outline online class
+Author:       Joseph Neathawk
+Author URI:   https://knighthawk0811.github.io
+Version:      1.0.200727
+License: GPLv3
+License URI: http://www.gnu.org/licenses/gpl.html
+Tags:         jpnp
+Text Domain:  version_class_outline
+*/
+
+
+
+/*--------------------------------------------------------------
+selector {
+	layout(position)
+	
+	content(text)
+	
+	design(background)
+	
+	other(z-index)
+}
+----------------------------------------------------------------
+>>> COLORS:	  
+----------------------------------------------------------------
+	blue-dark:#003366;
+	green:#00cc66;	
+	red: #aa0000;
+	yellow: #DFE69E rgba(255,255,100,0.5);
+
+----------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Main Structure
+# General Elements
+# Modal Navigation
+# Navigation
+# Header Area
+# Content Area
+# Footer Area
+# Reusable Classes
+# Other
+# Templates
+# Media Queries
+
+--------------------------------------------------------------*/
+
+
+
+/*--------------------------------------------------------------
+# Main Structure
+--------------------------------------------------------------*/
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+  box-sizing: border-box;
+}
+html.not-top { 
+	display:none;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+/*the entire body of the html page*/
+body {    
+	background: #eeeeee;
+}
+/* a wrapper around all the actual page content
+this will be centered on the page*/
+#page {
+    margin: 3px auto;
+    position: relative;
+    width: calc(100% - 10px);
+	
+    background: rgba(255,255,255,0.75);
+    border-radius: 5px;
+    box-shadow: 0px 0px 1px 2px rgba(0,0,0,0.25);
+}
+
+/*--------------------------------------------------------------
+# General Elements
+--------------------------------------------------------------*/
+iframe {
+    width:100%;
+    
+    border:1px solid rgba(0,0,0,0.5);
+}
+/*--------------------------------------------------------------
+# Modal Navigation
+--------------------------------------------------------------*/
+#button-main-menu {
+	height:2.5rem;
+    position: fixed;
+    right: 1rem;
+    top: 1rem;
+	width:3rem;
+	
+	z-index:1030 ;/*bootstrap default*/
+}
+
+
+/*--------------------------------------------------------------
+# Navigation
+--------------------------------------------------------------*/
+/* top menu */
+ul.menu {
+    display:inline-block;
+    position: relative;
+    
+    list-style-position: inside;
+    list-style-image: none;
+    list-style-type: none;
+}
+/* menu items */
+ul.menu li {
+    display: inline-block;
+    float:left;
+    padding:.5em 1em;
+    position: relative;
+    width:auto;
+}
+/* sub-menu 1  disabled */
+ul.menu > li > ul {
+    display: none;
+}
+/* sub-menu 1 active default */
+ul.menu > li:hover > ul {
+    display: block;
+    left: 0px;
+    padding: 0 5px;
+    position: absolute;
+    top: 100%;
+    
+    list-style-position: inside;
+    list-style-image: none;
+    list-style-type: none;
+    
+    background-color: #F9FF35;
+    
+    z-index: 1000;
+}
+/* sub-menu 1 active left side */
+.sidebar.left ul.menu > li:hover > ul {
+    display: block;
+    left:100%;
+    top: 0px;
+    right: unset;
+}
+/* sub-menu 1 active right side */
+.sidebar.right ul.menu > li:hover > ul {
+    display: block;
+    left:unset;
+    top: 0px;
+    right: 100%;
+}
+/* sub-menu 1 items */
+.sidebar.left ul.menu li,
+.sidebar.right ul.menu li {
+    display: block;
+    float:none;
+    width:100%;
+}
+
+/*--------------------------------------------------------------
+# Header Area
+--------------------------------------------------------------*/
+/*main header div*/
+#header {
+    margin: 0;
+	min-height:5em;
+    position: relative;
+    width: 100%;
+    padding: 1rem;
+    background-color: #529B46;
+}
+
+/*main link in the header*/
+#header a {
+
+
+}
+/* header title*/
+#header h1 {
+    display: inline;
+}
+/*--------------------------------------------------------------
+# Content Area
+--------------------------------------------------------------*/
+/*main content area, contains the "main" and "navbar"*/
+#content {
+    margin: 0 auto;
+    position: relative;
+    padding: 0;
+    width: 100%
+}
+
+    
+.sidebar {
+    background-color: #eeeeee;
+    position: relative;
+    padding:0;
+
+    border-bottom:1px solid #000000;
+}
+.sidebar.right,
+.sidebar.right.w-25 {
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: 75%;
+    right:0px;
+    
+    border:none;
+    border-left:1px solid #000000;
+}
+.sidebar.left,
+.sidebar.left.w-25 {
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left:0px;
+    right: 75%;
+    
+    border:none;
+    border-right:1px solid #000000;
+}
+.main {
+    background-color: #ddeecc;
+    width: 100%;
+    padding: 1em;
+    min-height: 30em;
+    opacity: 1;
+    font-style: normal;
+}
+.main.w-75 {
+    margin-right: 25%;
+}
+
+.article {
+	margin: 10px auto;
+	padding:1rem;
+	position: relative;
+	width: 100%;
+
+	background: rgba(255,255,255,0.75);
+}
+/*--------------------------------------------------------------
+# Footer Area
+--------------------------------------------------------------*/
+/*the footer of the page*/
+#footer {
+	height:3em;
+    margin: 0;
+    padding: 1rem;
+    position: relative;
+    width: 100%;
+    text-align: center;
+    background: #529B46;
+}
+/*--------------------------------------------------------------
+# Reusable Classes
+--------------------------------------------------------------*/
+
+.color-special {
+    color: #529B46;
+}
+.external-link::after {
+	margin: 0 0 0 0.1em;
+	
+    content: "\f08e";
+    font-family: FontAwesome;
+}
+
+.polaroid,
+.polaroid.card {
+    padding: 1em;
+    background-color: #F1EEEA;
+    border-radius: 1rem;
+    -webkit-box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.50);
+    box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.50);
+    margin-bottom: 2em;
+}
+.polaroid {
+    max-width: 100%;
+}
+.polaroid > img {
+    width: 100%;
+    height: auto;
+    -webkit-box-shadow: inset 0px 0px 1px 1px rgba(171,145,112,0.50);
+    box-shadow: inset 0px 0px 1px 1px rgba(171,145,112,0.50);
+}
+.polaroid > p,
+.polaroid .card-title {
+    text-align: center;
+    font-family: 'Sriracha', cursive, sans-serif;
+    font-size: 2em;
+}
+
+
+
+/*--------------------------------------------------------------
+# Other
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+# Templates
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+# Media Queries
+--------------------------------------------------------------*/
+
+/* for-phone-only */
+@media only screen and (max-width: 599px) {
+	
+}
+
+/* for-tablet-portrait-up */
+@media only screen and (min-width: 600px) {
+	
+}
+
+/* for-tablet-portrait-only */
+@media only screen and (min-width: 600px) and (max-width: 899px) {
+	
+}
+
+/* for-tablet-landscape-up */
+@media only screen and (min-width: 900px) {
+#page {
+		max-width:900px;
+	}
+	#button-main-menu {
+		position:absolute;
+	}
+}
+
+/* for-tablet-landscape-only */
+@media only screen and (min-width: 900px) and (max-width: 1199px) {
+	
+}
+
+/* for-desktop-up */
+@media only screen and (min-width: 1200px) {
+	
+}
+
+/* for-desktop-only */
+@media only screen and (min-width: 1200px) and (max-width: 1799px) {
+	
+}
+
+/* for-big-desktop-up */
+@media only screen and (min-width: 1800px) {
+	
+}
