@@ -310,47 +310,60 @@ ul.menu > li:hover > ul {
 # Media Queries
 --------------------------------------------------------------*/
 
-/* for-phone-only */
-@media only screen and (max-width: 599px) {
-	
+/* Bootstrap xs- | for-phone-only */
+@media only screen and (max-width: 575px) {
+
 }
 
-/* for-tablet-portrait-up */
-@media only screen and (min-width: 600px) {
-	
+/* Bootstrap sm+ | for-tablet-portrait-up */
+@media only screen and (min-width: 576px) {
+
 }
 
-/* for-tablet-portrait-only */
-@media only screen and (min-width: 600px) and (max-width: 899px) {
-	
+/* Bootstrap sm | for-tablet-portrait-only */
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+
 }
 
-/* for-tablet-landscape-up */
-@media only screen and (min-width: 900px) {
+/* Bootstrap md+ | for-tablet-landscape-up */
+@media only screen and (min-width: 768px) {
+
+}
+
+/* Bootstrap md | for-tablet-landscape-only */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+}
+
+/* Bootstrap lg+ | for-desktop-up */
+@media only screen and (min-width: 992px) {
+/**** DEFAULT MEDIA QUERY - 992px width and larger ****/
+
 #page {
-		max-width:900px;
-	}
-	#button-main-menu {
-		position:absolute;
-	}
+    max-width:1000px;
+}
+#button-main-menu {
+    position:absolute;
 }
 
-/* for-tablet-landscape-only */
-@media only screen and (min-width: 900px) and (max-width: 1199px) {
-	
 }
 
-/* for-desktop-up */
+/* Bootstrap lg | for-desktop-only */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+
+}
+
+/* Bootstrap xl+ | for-desktop-up */
 @media only screen and (min-width: 1200px) {
-	
+
 }
 
-/* for-desktop-only */
-@media only screen and (min-width: 1200px) and (max-width: 1799px) {
-	
+/* Bootstrap xl | for-desktop-only */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {
+
 }
 
-/* for-big-desktop-up */
-@media only screen and (min-width: 1800px) {
-	
+/* Bootstrap xxl+ | for-big-desktop-up */
+@media only screen and (min-width: 1400px) {
+
 }
